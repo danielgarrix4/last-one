@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Last One v1.0.0</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: #000;
+      }
+
+      main {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: min(100vw, calc(100vh * 16 / 9));
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        transform: translate(-50%, -50%);
+        background: #000;
+      }
+
+      #menu-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        user-select: none;
+      }
+
+      #splash-screen {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        user-select: none;
+      }
+
+      main[data-screen="menu"] #splash-screen {
+        display: none;
+      }
+
+      main[data-screen="splash"] #menu-image,
+      main[data-screen="splash"] .menu-option {
+        display: none;
+      }
+
+      .menu-option {
+        position: absolute;
+        left: 0;
+        width: 31.77%;
+        height: 6.4%;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .menu-option:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: -4px;
+      }
+
+      .menu-option--start {
+        top: 32.5%;
+      }
+
+      .menu-option--options {
+        top: 39.6%;
+      }
+
+      .menu-option--credits {
+        top: 46.5%;
+      }
+
+      .menu-option--exit {
+        top: 53.3%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main aria-label="Last One" data-screen="splash">
+      <img id="splash-screen" src="images/gui/splashscreen_logo.png" alt="Last One" draggable="false" />
+      <img id="menu-image" src="images/gui/menu.png" alt="" draggable="false" />
+      <button class="menu-option menu-option--start" type="button" aria-label="Play" data-menu-image="menu_start.png"></button>
+      <button class="menu-option menu-option--options" type="button" aria-label="Options" data-menu-image="menu_options.png"></button>
+      <button class="menu-option menu-option--credits" type="button" aria-label="Credits" data-menu-image="menu_credits.png"></button>
+      <button class="menu-option menu-option--exit" type="button" aria-label="Exit" data-menu-image="menu_exit.png"></button>
+    </main>
+    <script src="renderer.js"></script>
+  </body>
+
+</html>

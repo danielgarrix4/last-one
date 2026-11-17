@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "last-one",
+  "version": "1.0.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "description": "Juego de cartas con Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "engines": {
+    "node": ">=20 <21"
+  },
+  "devDependencies": {
+    "electron": "45.3.2"
+  }
+}
